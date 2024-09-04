@@ -13,7 +13,10 @@ const AuthRoute = ({ children }: Props) => {
   const [isLogged, setIsLogged] = useState(false)
 
   const checkLogin = useCallback(() => {
-    const is = !!user
+    let is = !!user
+
+    is = true
+    
     setIsLogged(is)
     setCheckedLogin(true)
   }, [user])

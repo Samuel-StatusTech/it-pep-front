@@ -25,6 +25,10 @@ export const theme: DefaultTheme = {
       bluegrey: "#D5DBED",
       white: "#FFFFFF",
     },
+    backgrounds: {
+      tableHeader: "#D9E3F4",
+      page: "#EAEEF9",
+    },
   },
   animations: {
     types: {

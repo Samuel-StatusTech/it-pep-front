@@ -3,6 +3,7 @@ import * as S from "./styles"
 import { Icons } from "../../assets/icons/_index"
 import { masks } from "../../utils/masks"
 import { useNavigate } from "react-router-dom"
+import Modal from "../../components/Modal"
 
 const companiesList = [
   { id: "id1", name: "Santa Joana" },
@@ -22,6 +23,7 @@ const LoginPage = () => {
   const [search, setSearch] = useState("")
   const [showingSelectDropdown, setShowingSelectDropdown] = useState(false)
   const [passVisible, setPassVisibility] = useState(false)
+  const [showingModal, setShowingModal] = useState(false)
 
   const handlePickCompany = (companyId: string) => {
     setForm((f) => ({ ...f, company: companyId }))
@@ -35,11 +37,20 @@ const LoginPage = () => {
   const handleSubmit = () => {
     if (form.company && form.cooperator && form.password) {
       navigate("/patients")
+    } else {
+      setShowingModal(true)
     }
   }
 
   return (
     <S.Page>
+      <Modal
+        role="unfilledFields"
+        visible={showingModal}
+        onClose={() => {
+          setShowingModal(false)
+        }}
+      />
       <S.ContentArea>
         <Icons.LogoUnicolor />
         <S.FormCard>
