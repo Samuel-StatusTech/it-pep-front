@@ -30,6 +30,9 @@ declare module "styled-components" {
         tableHeader: string
         page: string
         dashboardMain: string
+        card: string
+        cardSecondary: string
+        cardInactive: string
       }
     }
     animations: {

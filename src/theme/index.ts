@@ -29,6 +29,9 @@ export const theme: DefaultTheme = {
       tableHeader: "#D9E3F4",
       page: "#EAEEF9",
       dashboardMain: "#EFF3FD",
+      card: "rgba(31, 92, 170, 0.1)",
+      cardSecondary: "rgba(31, 92, 170, 0.15)",
+      cardInactive: "#D5D8ED",
     },
   },
   animations: {
