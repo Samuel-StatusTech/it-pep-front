@@ -5,6 +5,7 @@ export const Element = styled.aside<{ $opened: boolean }>`
   flex-direction: column;
   gap: 24px;
   transition: margin-left 0.3s;
+  overflow: hidden;
 
   & > svg {
     width: 156px;

@@ -19,10 +19,12 @@ const Router = () => {
           <Route path="dashboard">
             <Route path="" element={<Dashboard role="secretary" />} />
             <Route path="uti">
-              <Route
-                path="patient/:patientId"
-                element={<Dashboard role="patient" from="uti" />}
-              />
+              <Route path="patient/:patientId">
+                <Route
+                  path={"*"}
+                  element={<Dashboard role="patient" from="uti" />}
+                />
+              </Route>
             </Route>
             <Route path="emergency">
               <Route

@@ -82,9 +82,7 @@ export default function CustomizedTables({ data }: Props) {
   }
 
   const handlePatient = (patientId: string, origin: string) => {
-    navigate(`/dashboard/${origin}/patient/${patientId}`, {
-      unstable_viewTransition: true,
-    })
+    navigate(`/dashboard/${origin}/patient/${patientId}/allergy`)
   }
 
   return (

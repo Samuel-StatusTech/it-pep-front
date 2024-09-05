@@ -22,7 +22,7 @@ const iconRef: { [key: string]: JSX.Element } = {
 }
 
 const SideMenuItem = ({ data, active, k, action }: Props) => {
-  console.log(data.tag)
+
   const renderIcon = () => {
     const icon = iconRef[data.icon]
 
@@ -31,7 +31,7 @@ const SideMenuItem = ({ data, active, k, action }: Props) => {
 
   return (
     <S.Wrapper $active={active} $k={k}>
-      <Link to={`/dashboard${data.link}`} onClick={action}>
+      <Link to={`${data.link}`} onClick={action}>
         {renderIcon()}
         <S.Title>{data.text}</S.Title>
       </Link>
