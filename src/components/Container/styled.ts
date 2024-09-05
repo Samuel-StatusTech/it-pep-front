@@ -1,7 +1,11 @@
 import styled from "styled-components"
 
-export const Component = styled.div<{ $fullHeight?: boolean }>`
+export const Component = styled.div<{
+  $fullHeight?: boolean
+  $dashboard?: boolean
+}>`
   width: 100%;
+  /* max-width: ${({ $dashboard }) => ($dashboard ? 1180 : 1360)}px; */
   max-width: 1360px;
   margin: auto;
   flex: ${({ $fullHeight }) => ($fullHeight ? 1 : "unset")};

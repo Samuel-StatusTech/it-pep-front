@@ -1,7 +1,10 @@
 import * as React from "react"
 import * as S from "./styles"
+import { useNavigate } from "react-router-dom"
 
+import { theme as customTheme } from "../../theme"
 import { styled } from "@mui/material/styles"
+
 import Table from "@mui/material/Table"
 import TableBody from "@mui/material/TableBody"
 import TableCell, { tableCellClasses } from "@mui/material/TableCell"
@@ -9,9 +12,8 @@ import TableContainer from "@mui/material/TableContainer"
 import TableHead from "@mui/material/TableHead"
 import TableRow from "@mui/material/TableRow"
 import Paper from "@mui/material/Paper"
-import { theme as customTheme } from "../../theme"
+
 import { Icons } from "../../assets/icons/_index"
-import { patientsMock } from "./patients"
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -32,11 +34,15 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&": {
     fontFamily: "Roboto",
   },
+  "& th": {
+    whiteSpace: "nowrap",
+  },
   "& td": {
     padding: 12,
     border: "none",
     transition: "background-color 0.2s",
     cursor: "pointer",
+    whiteSpace: "nowrap",
   },
   "&:hover td": {
     backgroundColor: customTheme.colors.neutral.ice,
@@ -44,11 +50,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   // hide last border
   "&:last-child td, &:last-child th": {
     border: 0,
-    whiteSpace: "nowrap",
   },
 }))
-
-const rows = patientsMock
 
 const urgencyRelation: any = {
   1: "red",
@@ -57,7 +60,13 @@ const urgencyRelation: any = {
   4: "blue",
 }
 
-export default function CustomizedTables() {
+type Props = {
+  data: any[]
+}
+
+export default function CustomizedTables({ data }: Props) {
+  const navigate = useNavigate()
+
   const renderUrgency = (level: number) => {
     return <S.UrgencyIndicator $color={urgencyRelation[level]} />
   }
@@ -66,10 +75,16 @@ export default function CustomizedTables() {
     let children = []
 
     for (let i = 0; i <= status; i++) {
-      children.push(<Icons.Exclamation />)
+      children.push(<Icons.Exclamation key={i} />)
     }
 
     return children
+  }
+
+  const handlePatient = (patientId: string, origin: string) => {
+    navigate(`/dashboard/${origin}/patient/${patientId}`, {
+      unstable_viewTransition: true,
+    })
   }
 
   return (
@@ -94,8 +109,11 @@ export default function CustomizedTables() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
+          {data.map((row, k) => (
+            <StyledTableRow
+              key={k}
+              onClick={() => handlePatient(row.id, row.origin)}
+            >
               <StyledTableCell align="center">
                 {renderUrgency(row.urgency)}
               </StyledTableCell>
@@ -106,7 +124,18 @@ export default function CustomizedTables() {
               <StyledTableCell align="left">{row.socialName}</StyledTableCell>
               <StyledTableCell align="center">{row.age}</StyledTableCell>
               <StyledTableCell align="center">
-                {renderStatus(row.status)}
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: 4,
+                    width: "fit-content",
+                    margin: "auto",
+                  }}
+                >
+                  {renderStatus(row.status)}
+                </div>
               </StyledTableCell>
               <StyledTableCell align="center">{row.arrive}</StyledTableCell>
               <StyledTableCell align="center">{row.procedure}</StyledTableCell>

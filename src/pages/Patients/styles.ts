@@ -43,6 +43,7 @@ export const DataOrigin = styled.div<{ $active: boolean }>`
   color: ${({ $active, theme }) =>
     $active ? theme.colors.blue.soft : theme.colors.blue.light};
   transition: color 0.2s;
+  cursor: pointer;
 
   @media (max-width: ${({ theme }) => theme.bp.small}px) {
     font-size: 18px;

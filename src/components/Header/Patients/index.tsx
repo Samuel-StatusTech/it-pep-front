@@ -4,7 +4,7 @@ import * as S from "./styled"
 import Modal from "../../Modal"
 
 const PatientsHeader = () => {
-  const [showingPopup, setShowingPopup] = useState(true)
+  const [showingPopup, setShowingPopup] = useState(false)
 
   const handlePower = () => {
     setShowingPopup(!showingPopup)

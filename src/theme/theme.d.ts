@@ -19,16 +19,17 @@ declare module "styled-components" {
       red: {
         system: string
       }
-      backgrounds: {
-        tableHeader: string
-        page: string
-      }
       neutral: {
         black: string
         ice: string
         bluewhite: string
         bluegrey: string
         white: string
+      }
+      backgrounds: {
+        tableHeader: string
+        page: string
+        dashboardMain: string
       }
     }
     animations: {

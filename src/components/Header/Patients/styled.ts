@@ -28,4 +28,5 @@ export const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.neutral.bluewhite};
   display: grid;
   place-items: center;
+  cursor: pointer;
 `

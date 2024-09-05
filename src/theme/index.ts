@@ -28,6 +28,7 @@ export const theme: DefaultTheme = {
     backgrounds: {
       tableHeader: "#D9E3F4",
       page: "#EAEEF9",
+      dashboardMain: "#EFF3FD",
     },
   },
   animations: {
