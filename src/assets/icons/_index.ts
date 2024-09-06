@@ -26,6 +26,8 @@ import { ReactComponent as Power } from "./power.svg"
 import { ReactComponent as Print } from "./print.svg"
 import { ReactComponent as Save } from "./save.svg"
 import { ReactComponent as Search } from "./search.svg"
+import { ReactComponent as StarEmpty } from "./star_empty.svg"
+import { ReactComponent as StarFilled } from "./star_filled.svg"
 import { ReactComponent as Stethoscope } from "./stethoscope.svg"
 import { ReactComponent as Urgency } from "./urgency.svg"
 import { ReactComponent as User } from "./user.svg"
@@ -60,6 +62,8 @@ export const Icons = {
   Print,
   Save,
   Search,
+  StarEmpty,
+  StarFilled,
   Stethoscope,
   Urgency,
   User,

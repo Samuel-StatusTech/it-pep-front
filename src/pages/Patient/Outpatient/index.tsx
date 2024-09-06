@@ -4,10 +4,12 @@ import * as S from "./styles"
 import { useState } from "react"
 import { Icons } from "../../../assets/icons/_index"
 import SacrSubPage from "./SubPages/Sacr"
-import ClassificationSubPage from "./SubPages/Classification"
+import CidSubPage from "./SubPages/Cid"
+import AmbulatorySubPage from "./SubPages/Ambulatory"
+import ExaminationInternalSubPage from "./SubPages/ExaminationInternal"
+import ExaminationExternalSubPage from "./SubPages/ExaminationExternal"
 import Tabs from "../../../components/Tabs"
 import SideControl from "../../../components/SideControl"
-import CidSubPage from "./SubPages/Cid"
 
 // Relations
 export type ISubPages = "sacr" | "cid" | "outpatient" | "internal" | "external"
@@ -15,9 +17,9 @@ export type ISubPages = "sacr" | "cid" | "outpatient" | "internal" | "external"
 const pagesRelations = {
   sacr: SacrSubPage,
   cid: CidSubPage,
-  outpatient: ClassificationSubPage,
-  internal: ClassificationSubPage,
-  external: ClassificationSubPage,
+  outpatient: AmbulatorySubPage,
+  internal: ExaminationInternalSubPage,
+  external: ExaminationExternalSubPage,
 }
 
 const OutpatientPage = () => {
