@@ -66,7 +66,56 @@ const sidemenuConfig: TMenu["side"] = {
     emergency: [],
     surgery: [],
   },
-  secretary: [],
+  secretary: [
+    {
+      icon: "care",
+      text: "Cadastro Paciente",
+      link: "register",
+      tag: "register",
+    },
+    {
+      icon: "outpatient",
+      text: "Ambulatório",
+      link: "outpatient",
+      tag: "outpatient",
+    },
+    {
+      icon: "files",
+      text: "Consultar atendimento",
+      link: "results",
+      tag: "results",
+    },
+    {
+      icon: "urgency",
+      text: "Urgência",
+      link: "urgency",
+      tag: "urgency",
+    },
+    {
+      icon: "bed",
+      text: "Internamento",
+      link: "hospitalization",
+      tag: "hospitalization",
+    },
+    {
+      icon: "stethoscope",
+      text: "Parecer",
+      link: "opinion",
+      tag: "opinion",
+    },
+    {
+      icon: "medicalRecord",
+      text: "Prontuário Cirúrgico",
+      link: "medicalrecord",
+      tag: "medicalrecord",
+    },
+    {
+      icon: "documents",
+      text: "Doc. outros profissionais",
+      link: "documents",
+      tag: "documents",
+    },
+  ],
 }
 
 export const menu: TMenu = {

@@ -1,10 +1,16 @@
+import { useEffect, useState } from "react"
+import { useLocation } from "react-router-dom"
 import * as S from "./styles"
 
 import Header from "../../../components/Header"
 import SideMenu from "../../../components/SideMenu"
-import { useLocation } from "react-router-dom"
-import { useEffect, useState } from "react"
+
 import PatientBox from "../../../components/PatientBox"
+
+// Secretary
+import RegisterPage from "../../Secretary/Register"
+
+// Patients
 import Container from "../../../components/Container"
 import AllergyPage from "../../Patient/Allergy"
 import OutpatientPage from "../../Patient/Outpatient"
@@ -32,13 +38,25 @@ const Dashboard = (props: Props) => {
   }, [location])
 
   const renderPrincipal = () => {
-    switch (page) {
-      case "allergy":
-        return <AllergyPage />
-      case "outpatient":
-        return <OutpatientPage />
+    switch (props.role) {
+      case "patient":
+        switch (page) {
+          case "allergy":
+            return <AllergyPage />
+          case "outpatient":
+            return <OutpatientPage />
+          default:
+            return <></>
+        }
+      case "secretary":
+        switch (page) {
+          case "register":
+            return <RegisterPage />
+          default:
+            return <></>
+        }
       default:
-        return <></>
+        return null
     }
   }
 
@@ -54,6 +72,7 @@ const Dashboard = (props: Props) => {
         >
           <S.Content>
             {props.role === "patient" ? <PatientBox /> : <></>}
+            {props.role === "secretary" ? <PatientBox /> : <></>}
 
             {renderPrincipal()}
           </S.Content>

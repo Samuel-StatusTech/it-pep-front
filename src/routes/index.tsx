@@ -17,7 +17,9 @@ const Router = () => {
             <Route path="" element={<PatientsPage />} />
           </Route>
           <Route path="dashboard">
-            <Route path="" element={<Dashboard role="secretary" />} />
+            <Route path="secretary">
+              <Route path={"*"} element={<Dashboard role="secretary" />} />
+            </Route>
             <Route path="uti">
               <Route path="patient/:patientId">
                 <Route
