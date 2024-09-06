@@ -50,6 +50,7 @@ export const Dropdown = styled.div<{ $showing: boolean }>`
   background-color: ${({ theme }) => theme.colors.neutral.white};
   padding-left: 12px;
   width: 100%;
+  z-index: 3;
 `
 
 export const DropdownSearchArea = styled.div`

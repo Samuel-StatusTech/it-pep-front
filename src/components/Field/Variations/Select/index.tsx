@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import * as C from "../../styles"
 import * as S from "./styles"
 
@@ -36,6 +36,17 @@ const MultipleField = (props: Props) => {
     onChange(opt.key)
     toggleDropdown()
   }
+
+  useEffect(() => {
+    const fn = (e: any) => {
+      if (!selectRef.current?.contains(e.target) && opened) {
+        toggleDropdown()
+        document.removeEventListener("mousedown", fn)
+      }
+    }
+
+    document.addEventListener("mousedown", fn)
+  })
 
   return (
     <S.Area $size={size} $gridSize={gridSize}>

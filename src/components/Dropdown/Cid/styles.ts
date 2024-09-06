@@ -24,7 +24,7 @@ export const Main = styled.div<{ $opened: boolean }>`
 export const Box = styled.div<{ $visible: boolean }>`
   display: grid;
   grid-template-rows: ${({ $visible }) => ($visible ? 1 : 0)}fr;
-  /* overflow: hidden; */
+  overflow: hidden;
   transition: grid-template-rows 0.3s;
 `
 
@@ -36,7 +36,7 @@ export const BoxContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 20px 8px 32px 16px;
+  padding: 20px 8px 124px 16px; // 32px 16px;
 `
 
 export const DataList = styled.div`
