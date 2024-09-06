@@ -1,9 +1,11 @@
+import * as C from "../styles"
 import * as S from "./styles"
 
 import { useState } from "react"
 import { Icons } from "../../../assets/icons/_index"
 import ListSubPage from "./SubPages/List"
 import ClassificationSubPage from "./SubPages/Classification"
+import SideControl from "../../../components/SideControl"
 
 type TTabsProps = {
   list: {
@@ -69,7 +71,10 @@ const AllergyPage = () => {
         actualPage={subPage}
       />
 
-      {renderSubPage()}
+      <C.Principal>
+        {renderSubPage()}
+        <SideControl />
+      </C.Principal>
     </S.Content>
   )
 }

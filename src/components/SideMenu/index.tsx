@@ -21,8 +21,7 @@ type Props = TPageMenuConfig & {
 }
 
 const SideMenu = (props: Props) => {
-  const { role } = props
-  const page = "allergy"
+  const { page, role } = props
 
   // use ref ...
 

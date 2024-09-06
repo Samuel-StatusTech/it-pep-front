@@ -6,4 +6,5 @@ export const Input = styled.input`
   font-size: 16px;
   flex: 1;
   min-width: unset;
+  width: 100%;
 `

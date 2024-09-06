@@ -7,7 +7,7 @@ import { useEffect, useState } from "react"
 import PatientBox from "../../../components/PatientBox"
 import Container from "../../../components/Container"
 import AllergyPage from "../../Patient/Allergy"
-import SideControl from "../../../components/SideControl"
+import OutpatientPage from "../../Patient/Outpatient"
 
 type Props =
   | {
@@ -24,11 +24,9 @@ const Dashboard = (props: Props) => {
   const [page, setPage] = useState("dash")
 
   useEffect(() => {
-    const splitted = location.pathname.split("/dashboard")
+    const splitted = location.pathname.split("/")
 
-    console.log(splitted)
-
-    const val = "allergy"
+    const val = splitted[splitted.length - 1] ?? ""
 
     setPage(val)
   }, [location])
@@ -37,6 +35,8 @@ const Dashboard = (props: Props) => {
     switch (page) {
       case "allergy":
         return <AllergyPage />
+      case "outpatient":
+        return <OutpatientPage />
       default:
         return <></>
     }
@@ -48,15 +48,14 @@ const Dashboard = (props: Props) => {
       <S.Main>
         <Header.Dashboard />
 
-        <Container fullHeight={true}>
+        <Container
+          styles={{ display: "flex", flexDirection: "column" }}
+          fullHeight={true}
+        >
           <S.Content>
             {props.role === "patient" ? <PatientBox /> : <></>}
 
-            <S.Principal>
-              {renderPrincipal()}
-
-              <SideControl />
-            </S.Principal>
+            {renderPrincipal()}
           </S.Content>
         </Container>
       </S.Main>

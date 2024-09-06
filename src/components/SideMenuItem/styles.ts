@@ -5,6 +5,8 @@ export const Wrapper = styled.div<{ $active: boolean; $k: number }>`
     $active ? theme.colors.backgrounds.dashboardMain : theme.colors.blue.dark};
   color: ${({ $active, theme }) =>
     $active ? theme.colors.blue.soft : theme.colors.backgrounds.dashboardMain};
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
 
   a {
     color: currentColor;
@@ -16,8 +18,6 @@ export const Wrapper = styled.div<{ $active: boolean; $k: number }>`
     text-decoration: none;
     transition: color 0.3s, background-color 0.3s;
     cursor: pointer;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
 
     svg {
       width: 48px;

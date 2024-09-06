@@ -14,6 +14,7 @@ import { ReactComponent as Files } from "./files.svg"
 import { ReactComponent as HidePass } from "./hidepass.svg"
 import { ReactComponent as Home } from "./home.svg"
 import { ReactComponent as Horn } from "./horn.svg"
+import { ReactComponent as IndicatorCircle } from "./indicator_circle.svg"
 import { ReactComponent as LogoDuo } from "./logo_duo.svg"
 import { ReactComponent as LogoUnicolor } from "./logo_monochromatic.svg"
 import { ReactComponent as MedicalRecord } from "./medicalRecord.svg"
@@ -47,6 +48,7 @@ export const Icons = {
   History,
   Home,
   Horn,
+  IndicatorCircle,
   LogoDuo,
   LogoUnicolor,
   MedicalRecord,

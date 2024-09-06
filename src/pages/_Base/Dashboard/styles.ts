@@ -24,15 +24,6 @@ export const Content = styled.div`
   gap: 20px;
   align-items: center;
   justify-content: flex-start;
-  overflow: hidden;
 
   padding: 16px;
-`
-
-export const Principal = styled.div`
-  flex: 1;
-  min-width: 100%;
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
 `
