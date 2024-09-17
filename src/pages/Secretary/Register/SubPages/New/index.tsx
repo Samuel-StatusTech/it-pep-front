@@ -1,7 +1,7 @@
+import { useState } from "react"
 import * as S from "./styles"
 
 import { Field } from "../../../../../components/Field"
-import { useState } from "react"
 
 const RegisterSubPage = () => {
   const [form, setForm] = useState({
@@ -46,6 +46,8 @@ const RegisterSubPage = () => {
     convein: "",
     plan: "",
     subplan: "",
+    tAverage: "",
+    emergencyUn: "",
     // Profile
     workplace: "",
     job: "",
@@ -243,6 +245,253 @@ const RegisterSubPage = () => {
                   setForm((f) => ({ ...f, partner: val }))
                 }
                 gridSize={4}
+              />
+            </S.FormBlockFields>
+          </S.FBLines>
+        </S.FormBlock>
+      </S.FormLine>
+
+      <S.FormLine>
+        <S.FormBlock>
+          <S.FormBlockTitle>
+            <span>Contato</span>
+          </S.FormBlockTitle>
+          <S.FBLines>
+            <S.FormBlockFields>
+              <Field.Input
+                placeholder="00000-000"
+                label="CEP"
+                value={form.cep}
+                onChange={(val: any) => setForm((f) => ({ ...f, cep: val }))}
+                gridSize={2}
+              />
+              <Field.Input
+                placeholder="Escreva aqui"
+                label="Endereço"
+                value={form.address}
+                onChange={(val: any) =>
+                  setForm((f) => ({ ...f, address: val }))
+                }
+                gridSize={6}
+              />
+              <Field.Input
+                placeholder="Escreva aqui"
+                label="Número"
+                value={form.number}
+                onChange={(val: any) => setForm((f) => ({ ...f, number: val }))}
+                gridSize={2}
+              />
+              <Field.Input
+                placeholder="Escreva aqui"
+                label="Complemento"
+                value={form.complement}
+                onChange={(val: any) =>
+                  setForm((f) => ({ ...f, complement: val }))
+                }
+                gridSize={2}
+              />
+            </S.FormBlockFields>
+            <S.FormBlockFields>
+              <Field.Input
+                placeholder="Escreva aqui"
+                label="Bairro"
+                value={form.neighborhood}
+                onChange={(val: any) =>
+                  setForm((f) => ({ ...f, neighborhood: val }))
+                }
+                gridSize={5}
+              />
+              <Field.Input
+                placeholder="Escreva aqui"
+                label="Cidade"
+                value={form.city}
+                onChange={(val: any) => setForm((f) => ({ ...f, city: val }))}
+                gridSize={5}
+              />
+              <Field.Select
+                label="UF"
+                value={form.uf}
+                onChange={(val: any) => setForm((f) => ({ ...f, uf: val }))}
+                options={[]}
+                gridSize={2}
+              />
+            </S.FormBlockFields>
+            <S.FormBlockFields>
+              <Field.Select
+                label="DDI"
+                value={form.ddi}
+                onChange={(val: any) => setForm((f) => ({ ...f, ddi: val }))}
+                options={[]}
+                gridSize={2}
+              />
+              <Field.Input
+                placeholder="Escreva aqui"
+                label="DDD"
+                value={form.ddd}
+                onChange={(val: any) => setForm((f) => ({ ...f, ddd: val }))}
+                gridSize={2}
+              />
+              <Field.Input
+                placeholder="Escreva aqui"
+                label="Celular"
+                value={form.phone}
+                onChange={(val: any) => setForm((f) => ({ ...f, phone: val }))}
+                gridSize={2}
+              />
+              <Field.Select
+                label="DDI"
+                value={form.ddiTele}
+                onChange={(val: any) =>
+                  setForm((f) => ({ ...f, ddiTele: val }))
+                }
+                options={[]}
+                gridSize={2}
+              />
+              <Field.Input
+                placeholder="Escreva aqui"
+                label="DDD"
+                value={form.dddTele}
+                onChange={(val: any) =>
+                  setForm((f) => ({ ...f, dddTele: val }))
+                }
+                gridSize={2}
+              />
+              <Field.Input
+                placeholder="Escreva aqui"
+                label="Celular"
+                value={form.telephone}
+                onChange={(val: any) =>
+                  setForm((f) => ({ ...f, telephone: val }))
+                }
+                gridSize={2}
+              />
+            </S.FormBlockFields>
+          </S.FBLines>
+        </S.FormBlock>
+      </S.FormLine>
+
+      <S.FormLine>
+        <S.FormBlock>
+          <S.FormBlockTitle>
+            <span>Dados</span>
+          </S.FormBlockTitle>
+          <S.FBLines>
+            <S.FormBlockFields>
+              <Field.Select
+                label="Convênio"
+                value={form.convein}
+                onChange={(val: any) =>
+                  setForm((f) => ({ ...f, convein: val }))
+                }
+                options={[]}
+                gridSize={6}
+              />
+              <Field.Select
+                label="Plano"
+                value={form.plan}
+                onChange={(val: any) => setForm((f) => ({ ...f, plan: val }))}
+                options={[]}
+                gridSize={6}
+              />
+            </S.FormBlockFields>
+            <S.FormBlockFields>
+              <Field.Select
+                label="UF"
+                value={form.uf}
+                onChange={(val: any) => setForm((f) => ({ ...f, uf: val }))}
+                options={[]}
+                gridSize={6}
+              />
+              <Field.Input
+                placeholder="Escreva aqui"
+                label="Média de transferência"
+                value={form.tAverage}
+                onChange={(val: any) =>
+                  setForm((f) => ({ ...f, tAverage: val }))
+                }
+                gridSize={3}
+              />
+              <Field.Input
+                placeholder="Escreva aqui"
+                label="Escolaridade"
+                value={form.emergencyUn}
+                onChange={(val: any) =>
+                  setForm((f) => ({ ...f, emergencyUn: val }))
+                }
+                gridSize={3}
+              />
+            </S.FormBlockFields>
+          </S.FBLines>
+        </S.FormBlock>
+      </S.FormLine>
+
+      <S.FormLine>
+        <S.FormBlock>
+          <S.FormBlockTitle>
+            <span>Perfil</span>
+          </S.FormBlockTitle>
+          <S.FBLines>
+            <S.FormBlockFields>
+              <Field.Input
+                placeholder="Escreva aqui"
+                label="local de trabalho"
+                value={form.workplace}
+                onChange={(val: any) =>
+                  setForm((f) => ({ ...f, workplace: val }))
+                }
+                gridSize={3}
+              />
+              <Field.Select
+                label="Profissão"
+                value={form.job}
+                onChange={(val: any) => setForm((f) => ({ ...f, job: val }))}
+                options={[]}
+                gridSize={3}
+              />
+              <Field.Select
+                label="Classe econômica"
+                value={form.class}
+                onChange={(val: any) => setForm((f) => ({ ...f, class: val }))}
+                options={[]}
+                gridSize={3}
+              />
+              <Field.Select
+                label="Escolaridade"
+                value={form.scholar}
+                onChange={(val: any) =>
+                  setForm((f) => ({ ...f, scholar: val }))
+                }
+                options={[]}
+                gridSize={3}
+              />
+            </S.FormBlockFields>
+            <S.FormBlockFields>
+              <Field.Input
+                placeholder="Escreva aqui"
+                label="Nacionalidade"
+                value={form.nationality}
+                onChange={(val: any) =>
+                  setForm((f) => ({ ...f, nationality: val }))
+                }
+                gridSize={3}
+              />
+              <Field.Input
+                placeholder="Escreva aqui"
+                label="Naturalidade"
+                value={form.naturality}
+                onChange={(val: any) =>
+                  setForm((f) => ({ ...f, naturality: val }))
+                }
+                gridSize={3}
+              />
+              <Field.Select
+                label="Religião"
+                value={form.religion}
+                onChange={(val: any) =>
+                  setForm((f) => ({ ...f, religion: val }))
+                }
+                options={[]}
+                gridSize={3}
               />
             </S.FormBlockFields>
           </S.FBLines>

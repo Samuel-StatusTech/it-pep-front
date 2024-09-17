@@ -1,5 +1,3 @@
-import * as React from "react"
-import * as S from "./styles"
 import { useNavigate } from "react-router-dom"
 
 import { theme as customTheme } from "../../theme"
@@ -13,7 +11,7 @@ import TableHead from "@mui/material/TableHead"
 import TableRow from "@mui/material/TableRow"
 import Paper from "@mui/material/Paper"
 
-import { Icons } from "../../assets/icons/_index"
+import { tableConfig } from "../../utils/system/tables"
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -53,57 +51,31 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }))
 
-const urgencyRelation: any = {
-  1: "red",
-  2: "yellow",
-  3: "green",
-  4: "blue",
-}
-
 type Props = {
+  origin: string
   data: any[]
 }
 
-export default function CustomizedTables({ data }: Props) {
+export default function CustomizedTables({ origin, data }: Props) {
   const navigate = useNavigate()
 
-  const renderUrgency = (level: number) => {
-    return <S.UrgencyIndicator $color={urgencyRelation[level]} />
-  }
-
-  const renderStatus = (status: number) => {
-    let children = []
-
-    for (let i = 0; i <= status; i++) {
-      children.push(<Icons.Exclamation key={i} />)
-    }
-
-    return children
-  }
+  const config =
+    tableConfig["patients"][origin as keyof typeof tableConfig.patients]
 
   const handlePatient = (patientId: string, origin: string) => {
     navigate(`/dashboard/${origin}/patient/${patientId}/allergy`)
   }
 
-  return (
+  return !config ? null : (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell align="center">Prioridade</StyledTableCell>
-            <StyledTableCell align="left">Protocolo</StyledTableCell>
-            <StyledTableCell align="left">Atendimento</StyledTableCell>
-            <StyledTableCell align="left">Cod. Paciente</StyledTableCell>
-            <StyledTableCell align="left">Nome do Paciente</StyledTableCell>
-            <StyledTableCell align="left">Nome social</StyledTableCell>
-            <StyledTableCell align="left">Idade</StyledTableCell>
-            <StyledTableCell align="center">Status</StyledTableCell>
-            <StyledTableCell align="center">Recepção</StyledTableCell>
-            <StyledTableCell align="center">Procedimento</StyledTableCell>
-            <StyledTableCell align="center">Leito</StyledTableCell>
-            <StyledTableCell align="center">Especialidade</StyledTableCell>
-            <StyledTableCell align="center">CID</StyledTableCell>
-            <StyledTableCell align="center">Setor</StyledTableCell>
+            {config.columns.map((col, k) => (
+              <StyledTableCell key={k} align={col.align}>
+                {col.name}
+              </StyledTableCell>
+            ))}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -112,35 +84,18 @@ export default function CustomizedTables({ data }: Props) {
               key={k}
               onClick={() => handlePatient(row.id, row.origin)}
             >
-              <StyledTableCell align="center">
-                {renderUrgency(row.urgency)}
-              </StyledTableCell>
-              <StyledTableCell align="center">{row.protocol}</StyledTableCell>
-              <StyledTableCell align="center">{row.callNumber}</StyledTableCell>
-              <StyledTableCell align="center">{row.code}</StyledTableCell>
-              <StyledTableCell align="left">{row.name}</StyledTableCell>
-              <StyledTableCell align="left">{row.socialName}</StyledTableCell>
-              <StyledTableCell align="center">{row.age}</StyledTableCell>
-              <StyledTableCell align="center">
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    gap: 4,
-                    width: "fit-content",
-                    margin: "auto",
-                  }}
-                >
-                  {renderStatus(row.status)}
-                </div>
-              </StyledTableCell>
-              <StyledTableCell align="center">{row.arrive}</StyledTableCell>
-              <StyledTableCell align="center">{row.procedure}</StyledTableCell>
-              <StyledTableCell align="center">{row.bed}</StyledTableCell>
-              <StyledTableCell align="center">{row.speciality}</StyledTableCell>
-              <StyledTableCell align="center">{row.cid}</StyledTableCell>
-              <StyledTableCell align="center">{row.sector}</StyledTableCell>
+              {config.columns.map((col, k) => {
+                const content =
+                  config.specialFields && config.specialFields[col.field]
+                    ? config.specialFields[col.field](row)
+                    : row[col.field]
+
+                return (
+                  <StyledTableCell key={k} align={col.align}>
+                    {content}
+                  </StyledTableCell>
+                )
+              })}
             </StyledTableRow>
           ))}
         </TableBody>

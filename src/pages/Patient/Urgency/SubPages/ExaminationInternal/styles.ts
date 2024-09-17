@@ -58,22 +58,6 @@ export const FormBlock = styled.div`
   flex-direction: column;
 `
 
-export const FBLines = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 24px;
-`
-
-export const FormBlockFields = styled.div<{ $columns?: number }>`
-  display: grid;
-  grid-gap: 0.5rem;
-  grid-template-columns: repeat(${({ $columns }) => $columns ?? 12}, 1fr);
-  align-items: stretch;
-  gap: 16px;
-  flex: 12;
-`
-
 export const FormBlockTitle = styled.div`
   display: flex;
   flex-direction: column;

@@ -51,13 +51,13 @@ const MultipleField = (props: Props) => {
   return (
     <S.Area $size={size} $gridSize={gridSize}>
       <S.Select ref={selectRef}>
-        {label && (
-          <C.Label>
-            <span>{label}</span>
-            {necessary && <span> *</span>}
-          </C.Label>
-        )}
         <S.SelectMain onClick={toggleDropdown}>
+          {label && (
+            <C.Label>
+              <span>{label}</span>
+              {necessary && <span> *</span>}
+            </C.Label>
+          )}
           <span>
             {value
               ? options.find((opt) => opt.key === value)?.name

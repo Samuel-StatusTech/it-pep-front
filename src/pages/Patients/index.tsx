@@ -109,6 +109,7 @@ const PatientsPage = () => {
           </S.TableControls>
           <S.TableArea>
             <Table
+              origin={origin}
               data={data.filter((i) => {
                 let show = true
 
