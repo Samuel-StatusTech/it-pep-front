@@ -24,6 +24,7 @@ import { ReactComponent as Paper } from "./paper.svg"
 import { ReactComponent as Plus } from "./plus.svg"
 import { ReactComponent as Power } from "./power.svg"
 import { ReactComponent as Print } from "./print.svg"
+import { ReactComponent as RedCross } from "./redCross.svg"
 import { ReactComponent as Save } from "./save.svg"
 import { ReactComponent as Search } from "./search.svg"
 import { ReactComponent as StarEmpty } from "./star_empty.svg"
@@ -60,6 +61,7 @@ export const Icons = {
   Plus,
   Power,
   Print,
+  RedCross,
   Save,
   Search,
   StarEmpty,

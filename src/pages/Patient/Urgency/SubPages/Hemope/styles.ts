@@ -8,11 +8,42 @@ export const Subpage = styled.div`
   border-radius: 8px;
 `
 
+export const SubpageHead = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+  margin: 16px 24px;
+  padding-bottom: 36px;
+
+  border-bottom: 1px solid ${({ theme }) => theme.colors.neutral.black};
+
+  & > svg {
+    cursor: pointer;
+
+    path {
+      fill: ${({ theme }) => theme.colors.blue.soft};
+    }
+  }
+`
+
+export const LogoArea = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  span {
+    color: ${({ theme }) => theme.colors.blue.dark};
+    font-weight: 700;
+    font-size: 24px;
+  }
+`
+
 export const SubpageTitle = styled.span`
   color: ${({ theme }) => theme.colors.blue.dark};
-  font-weight: 500;
-  font-size: 18px;
-  padding: 16px;
+  font-weight: 700;
+  font-size: 24px;
+  margin: auto;
 `
 
 // Form
@@ -42,7 +73,8 @@ export const FormBlockTitle = styled.div`
 
 export const FormBlockFields = styled.div`
   flex: 1;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   padding: 24px;
-  gap: 24px;
+  gap: 36px;
 `

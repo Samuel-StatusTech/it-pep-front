@@ -1,7 +1,13 @@
 import styled from "styled-components"
 
 export const CardsTabsArea = styled.div`
+  max-width: 100%;
+  overflow: hidden;
+`
+
+export const TabsContainer = styled.div`
   display: flex;
+  width: fit-content;
   gap: 8px;
 `
 
@@ -13,6 +19,7 @@ export const CardTab = styled.div`
   background-color: ${({ theme }) => theme.colors.backgrounds.cardInactive};
   transition: background-color 0.3s;
   color: ${({ theme }) => theme.colors.blue.medium};
+  white-space: nowrap;
   cursor: pointer;
 
   &:hover,

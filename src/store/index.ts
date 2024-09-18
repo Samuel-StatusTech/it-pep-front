@@ -12,7 +12,7 @@ export const getStore = create<TStore>()(
         controllers: controls(set),
       }),
       {
-        name: "moreira",
+        name: "pep",
         partialize: (store) => ({
           user: store.user,
         }),

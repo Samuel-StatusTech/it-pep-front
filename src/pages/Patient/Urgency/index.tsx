@@ -4,25 +4,34 @@ import * as S from "./styles"
 import { useState } from "react"
 import { Icons } from "../../../assets/icons/_index"
 import SacrSubPage from "./SubPages/Sacr"
-import CidSubPage from "./SubPages/Cid"
-import AmbulatorySubPage from "./SubPages/Ambulatory"
-import ExaminationInternalSubPage from "./SubPages/ExaminationInternal"
-import ExaminationExternalSubPage from "./SubPages/ExaminationExternal"
+import HemopeSubPage from "./SubPages/Hemope"
+
 import Tabs from "../../../components/Tabs"
 import SideControl from "../../../components/SideControl"
 
 // Relations
-export type ISubPages = "sacr" | "cid" | "outpatient" | "internal" | "external"
+export type ISubPages =
+  | "sacr"
+  | "hemope"
+  | "hiv"
+  | "cid"
+  | "clinical"
+  | "terms"
+  | "out"
+  | "admission"
 
 const pagesRelations = {
   sacr: SacrSubPage,
-  cid: CidSubPage,
-  outpatient: AmbulatorySubPage,
-  internal: ExaminationInternalSubPage,
-  external: ExaminationExternalSubPage,
+  hemope: HemopeSubPage,
+  hiv: SacrSubPage,
+  cid: SacrSubPage,
+  clinical: SacrSubPage,
+  terms: SacrSubPage,
+  out: SacrSubPage,
+  admission: SacrSubPage,
 }
 
-const OutpatientPage = () => {
+const UrgencyPage = () => {
   const [subPage, setSubPage] = useState<ISubPages>("sacr")
 
   const handleClick = (page: ISubPages) => {
@@ -45,23 +54,38 @@ const OutpatientPage = () => {
           },
           {
             icon: <Icons.Paper />,
+            title: "HEMOPE - STS",
+            targetPage: "hemope",
+          },
+          {
+            icon: <Icons.Paper />,
+            title: "Anti-HIV",
+            targetPage: "hiv",
+          },
+          {
+            icon: <Icons.Paper />,
             title: "Diagnóstico CID",
             targetPage: "cid",
           },
           {
             icon: <Icons.Paper />,
-            title: "Atendimento Ambulatório",
-            targetPage: "outpatient",
+            title: "Encaminhamento Clínico",
+            targetPage: "clinical",
           },
           {
             icon: <Icons.Paper />,
-            title: "Solicitações de exames interno",
-            targetPage: "internal",
+            title: "Termos",
+            targetPage: "terms",
           },
           {
             icon: <Icons.Paper />,
-            title: "Solicitações de exames externo",
-            targetPage: "external",
+            title: "Alta médica",
+            targetPage: "outMedic",
+          },
+          {
+            icon: <Icons.Paper />,
+            title: "Admissão",
+            targetPage: "admission",
           },
         ]}
         action={handleClick}
@@ -76,4 +100,4 @@ const OutpatientPage = () => {
   )
 }
 
-export default OutpatientPage
+export default UrgencyPage

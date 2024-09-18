@@ -13,16 +13,18 @@ type TTabsProps = {
 const Tabs = ({ list, action, actualPage }: TTabsProps) => {
   return (
     <S.CardsTabsArea>
-      {list.map((t, k) => (
-        <S.CardTab
-          key={k}
-          onClick={() => action(t.targetPage)}
-          className={actualPage === t.targetPage ? "active" : ""}
-        >
-          {t.icon}
-          <S.Title>{t.title}</S.Title>
-        </S.CardTab>
-      ))}
+      <S.TabsContainer>
+        {list.map((t, k) => (
+          <S.CardTab
+            key={k}
+            onClick={() => action(t.targetPage)}
+            className={actualPage === t.targetPage ? "active" : ""}
+          >
+            {t.icon}
+            <S.Title>{t.title}</S.Title>
+          </S.CardTab>
+        ))}
+      </S.TabsContainer>
     </S.CardsTabsArea>
   )
 }
