@@ -5,6 +5,7 @@ import { useState } from "react"
 import { Icons } from "../../../assets/icons/_index"
 import SacrSubPage from "./SubPages/Sacr"
 import HemopeSubPage from "./SubPages/Hemope"
+import HivSubPage from "./SubPages/Hiv"
 
 import Tabs from "../../../components/Tabs"
 import SideControl from "../../../components/SideControl"
@@ -23,7 +24,7 @@ export type ISubPages =
 const pagesRelations = {
   sacr: SacrSubPage,
   hemope: HemopeSubPage,
-  hiv: SacrSubPage,
+  hiv: HivSubPage,
   cid: SacrSubPage,
   clinical: SacrSubPage,
   terms: SacrSubPage,

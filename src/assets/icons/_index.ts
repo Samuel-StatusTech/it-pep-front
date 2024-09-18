@@ -2,8 +2,10 @@ import { ReactComponent as Arrow } from "./arrow.svg"
 import { ReactComponent as ArrowLine } from "./arrow_line.svg"
 import { ReactComponent as Bed } from "./bed.svg"
 import { ReactComponent as Burguer } from "./burguer.svg"
+import { ReactComponent as Calendar } from "./calendar.svg"
 import { ReactComponent as Care } from "./care.svg"
 import { ReactComponent as Check } from "./check.svg"
+import { ReactComponent as Clock } from "./clock.svg"
 import { ReactComponent as Close } from "./close.svg"
 import { ReactComponent as Copy } from "./copy.svg"
 import { ReactComponent as Documents } from "./documents.svg"
@@ -38,8 +40,10 @@ export const Icons = {
   ArrowLine,
   Bed,
   Burguer,
+  Calendar,
   Care,
   Check,
+  Clock,
   Close,
   Copy,
   Documents,
