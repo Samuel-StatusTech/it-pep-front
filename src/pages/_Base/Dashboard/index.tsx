@@ -15,6 +15,7 @@ import Container from "../../../components/Container"
 import AllergyPage from "../../Patient/Allergy"
 import OutpatientPage from "../../Patient/Outpatient"
 import UrgencyPage from "../../Patient/Urgency"
+import { HospitalizationPage } from "../../Patient/Hospitalization"
 
 type Props =
   | {
@@ -48,6 +49,12 @@ const Dashboard = (props: Props) => {
             return <OutpatientPage />
           case "urgency":
             return <UrgencyPage />
+          case "nursery":
+            return <HospitalizationPage.Nursery />
+          case "maternity":
+            return <HospitalizationPage.Maternity />
+          case "utirecord":
+            return <HospitalizationPage.UtiRecord />
           default:
             return <></>
         }

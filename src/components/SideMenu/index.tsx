@@ -66,6 +66,7 @@ const SideMenu = (props: Props) => {
             action={toggleSideMenu}
             data={item}
             active={page === item.tag}
+            page={page}
           />
         ))}
       </S.MenuContainer>

@@ -43,6 +43,23 @@ const sidemenuConfig: TMenu["side"] = {
         text: "Internamento",
         link: "hospitalization",
         tag: "hospitalization",
+        subtabs: [
+          {
+            text: "Enfermarias",
+            link: "hospitalization/nursery",
+            tag: "nursery",
+          },
+          {
+            text: "Maternidade",
+            link: "hospitalization/maternity",
+            tag: "maternity",
+          },
+          {
+            text: "Prontuário UTI",
+            link: "hospitalization/utirecord",
+            tag: "utirecord",
+          },
+        ],
       },
       {
         icon: "stethoscope",

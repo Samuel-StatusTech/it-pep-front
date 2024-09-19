@@ -6,13 +6,36 @@ export const Subpage = styled.div`
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.neutral.white};
   border-radius: 8px;
+  padding: 24px 0;
+  gap: 16px;
 `
 
 export const SubpageTitle = styled.span`
-  color: ${({ theme }) => theme.colors.blue.dark};
   font-weight: 500;
-  font-size: 18px;
-  padding: 16px;
+  font-size: 24px;
+  color: ${({ theme }) => theme.colors.blue.soft};
+  padding: 0 24px;
+`
+
+export const Text = styled.p`
+  & > span {
+    font-size: 16px;
+    color: ${({ theme }) => theme.colors.neutral.black};
+  }
+`
+
+export const Texts = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`
+
+export const InputWrapper = styled.div<{ $width?: string }>`
+  width: fit-content;
+  display: inline-block;
+  align-items: center;
+  padding: 8px 12px;
+  width: ${({ $width }) => $width ?? "unset"};
 `
 
 export const SearchArea = styled.div`
@@ -23,7 +46,7 @@ export const SearchArea = styled.div`
   background-color: ${({ theme }) => theme.colors.neutral.bluewhite};
   flex: 1;
   padding: 8px 24px;
-  margin: 0 24px 24px;
+  margin: 0 24px;
   border-radius: 36px;
   width: calc(100% - (24px * 2));
 `
@@ -47,36 +70,13 @@ export const Input = styled.input`
   }
 `
 
-// Form
-
-export const FormLine = styled.div`
-  display: flex;
-`
-
-export const FormBlock = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-`
-
-export const FormBlockTitle = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 4px 24px;
-  background-color: ${({ theme }) => theme.colors.backgrounds.cardSecondary};
-
-  span {
-    font-size: 14px;
-    font-weight: 600;
-    color: #666666;
-  }
-`
-
 export const InfoList = styled.div`
+  grid-column: span 12;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 24px;
+  padding: 4px 0;
+  margin-bottom: -12px;
 `
 
 export const Info = styled.div`
@@ -93,7 +93,7 @@ export const InfoName = styled.span`
   color: ${({ theme }) => theme.colors.neutral.black};
 `
 
-export const Laboratory = styled.span`
+export const InfoObs = styled.span`
   font-size: 14px;
   color: #8f9396;
   font-style: italic;

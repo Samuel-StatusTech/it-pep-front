@@ -1,7 +1,10 @@
-export type PSideMenuItem = {
-  icon: string
+type TItem = {
   text: string
   link: string
   tag: string
-  access?: string[]
+}
+
+export type PSideMenuItem = TItem & {
+  icon: string
+  subtabs?: TItem[]
 }

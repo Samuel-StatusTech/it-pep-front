@@ -34,6 +34,7 @@ export const Input = styled.input`
   background: none;
   padding: 4px;
   min-width: unset;
+  flex: 1;
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.blue.light};
