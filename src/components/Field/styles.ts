@@ -1,6 +1,10 @@
 import styled from "styled-components"
 
-export const Area = styled.div<{ $size?: number; $gridSize?: number }>`
+export const Area = styled.div<{
+  $size?: number
+  $gridSize?: number
+  $width?: string
+}>`
   position: relative;
   border: 2px solid ${({ theme }) => theme.colors.blue.soft};
   border-radius: 8px;
@@ -8,6 +12,7 @@ export const Area = styled.div<{ $size?: number; $gridSize?: number }>`
   display: flex;
   flex: ${({ $size }) => $size ?? 1};
   ${({ $gridSize }) => ($gridSize ? `grid-column: span ${$gridSize}` : "")};
+  ${({ $width }) => ($width ? `width: ${$width}` : "")};
 `
 
 export const Label = styled.label`

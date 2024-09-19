@@ -9,6 +9,7 @@ type Props = {
   placeholder?: string
   size?: number
   gridSize?: number
+  width?: string
 }
 
 const InputField = ({
@@ -19,9 +20,10 @@ const InputField = ({
   onChange,
   size,
   gridSize,
+  width,
 }: Props) => {
   return (
-    <C.Area $size={size} $gridSize={gridSize}>
+    <C.Area $size={size} $gridSize={gridSize} $width={width}>
       <C.Label>
         <span>{label}</span>
         {necessary && <span> *</span>}

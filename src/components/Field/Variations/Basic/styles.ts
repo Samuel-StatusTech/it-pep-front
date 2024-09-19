@@ -1,12 +1,17 @@
 import styled from "styled-components"
 
-export const Area = styled.div<{ $size?: number; $gridSize?: number }>`
+export const Area = styled.div<{
+  $size?: number
+  $gridSize?: number
+  $width?: string
+}>`
   position: relative;
   display: flex;
   align-items: center;
   flex: ${({ $size }) => $size ?? 1};
   ${({ $gridSize }) => ($gridSize ? `grid-column: span ${$gridSize}` : "")};
   gap: 24px;
+  width: ${({ $width }) => $width ?? "unset"};
 `
 
 export const Label = styled.label`

@@ -1,13 +1,14 @@
 import * as S from "./styles"
 
 type Props = {
-  label: string
+  label?: string
   value: string
-  onChange: (val: any) => void
+  onChange?: (val: any) => void
   necessary?: boolean
   placeholder?: string
   size?: number
   gridSize?: number
+  width?: string
 }
 
 const BasicField = ({
@@ -18,15 +19,18 @@ const BasicField = ({
   onChange,
   size,
   gridSize,
+  width,
 }: Props) => {
   return (
-    <S.Area $size={size} $gridSize={gridSize}>
-      <S.Label>
-        <span>{label}</span>
-      </S.Label>
+    <S.Area $size={size} $gridSize={gridSize} $width={width}>
+      {label && (
+        <S.Label>
+          <span>{label}</span>
+        </S.Label>
+      )}
       <S.Input
         value={value}
-        onChange={(ev) => onChange(ev.target.value)}
+        onChange={(ev) => onChange && onChange(ev.target.value)}
         placeholder={placeholder}
       />
     </S.Area>

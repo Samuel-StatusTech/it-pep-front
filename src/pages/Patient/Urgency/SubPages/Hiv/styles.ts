@@ -5,7 +5,7 @@ export const Subpage = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 48px;
+  padding: 24px;
   background-color: ${({ theme }) => theme.colors.neutral.white};
   border-radius: 8px;
 `

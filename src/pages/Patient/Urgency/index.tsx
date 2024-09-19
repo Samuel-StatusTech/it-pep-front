@@ -6,6 +6,11 @@ import { Icons } from "../../../assets/icons/_index"
 import SacrSubPage from "./SubPages/Sacr"
 import HemopeSubPage from "./SubPages/Hemope"
 import HivSubPage from "./SubPages/Hiv"
+import CidSubPage from "./SubPages/Cid"
+import ClinicalSubPage from "./SubPages/Clinical"
+import TermsSubPage from "./SubPages/Terms"
+import OutmedicSubPage from "./SubPages/Outmedic"
+import AdmissionSubPage from "./SubPages/Admission"
 
 import Tabs from "../../../components/Tabs"
 import SideControl from "../../../components/SideControl"
@@ -18,18 +23,18 @@ export type ISubPages =
   | "cid"
   | "clinical"
   | "terms"
-  | "out"
+  | "outMedic"
   | "admission"
 
 const pagesRelations = {
   sacr: SacrSubPage,
   hemope: HemopeSubPage,
   hiv: HivSubPage,
-  cid: SacrSubPage,
-  clinical: SacrSubPage,
-  terms: SacrSubPage,
-  out: SacrSubPage,
-  admission: SacrSubPage,
+  cid: CidSubPage,
+  clinical: ClinicalSubPage,
+  terms: TermsSubPage,
+  outMedic: OutmedicSubPage,
+  admission: AdmissionSubPage,
 }
 
 const UrgencyPage = () => {
