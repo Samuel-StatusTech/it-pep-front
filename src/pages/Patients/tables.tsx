@@ -63,7 +63,8 @@ export default function CustomizedTables({ origin, data }: Props) {
     tableConfig["patients"][origin as keyof typeof tableConfig.patients]
 
   const handlePatient = (patientId: string, origin: string) => {
-    navigate(`/dashboard/${origin}/patient/${patientId}/allergy`)
+    // navigate(`/dashboard/${origin}/patient/${patientId}/allergy`)
+    navigate(`/dashboard/uti/patient/${patientId}/allergy`)
   }
 
   return !config ? null : (

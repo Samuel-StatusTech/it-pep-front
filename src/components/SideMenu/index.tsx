@@ -34,7 +34,7 @@ const SideMenu = (props: Props) => {
   }
 
   const handleBack = () => {
-    navigate(-1)
+    navigate('/patients')
   }
 
   return (

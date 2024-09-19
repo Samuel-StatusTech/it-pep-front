@@ -24,7 +24,7 @@ const iconRef: { [key: string]: JSX.Element } = {
 }
 
 const SideMenuItem = ({ data, active, page, k, action }: Props) => {
-  const [showingDropdown, setShowingDropdown] = useState(true)
+  const [showingDropdown, setShowingDropdown] = useState(false)
 
   const renderIcon = () => {
     const icon = iconRef[data.icon]
