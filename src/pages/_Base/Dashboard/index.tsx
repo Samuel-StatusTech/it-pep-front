@@ -16,6 +16,8 @@ import AllergyPage from "../../Patient/Allergy"
 import OutpatientPage from "../../Patient/Outpatient"
 import UrgencyPage from "../../Patient/Urgency"
 import { HospitalizationPage } from "../../Patient/Hospitalization"
+import OpinionPage from "../../Patient/Opinion"
+import MedicalRecordPage from "../../Patient/MedicakRecord"
 
 type Props =
   | {
@@ -55,6 +57,10 @@ const Dashboard = (props: Props) => {
             return <HospitalizationPage.Maternity />
           case "utirecord":
             return <HospitalizationPage.UtiRecord />
+          case "opinion":
+            return <OpinionPage />
+          case "medicalrecord":
+            return <MedicalRecordPage />
           default:
             return <></>
         }

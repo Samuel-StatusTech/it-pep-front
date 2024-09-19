@@ -51,6 +51,11 @@ export const InputWrapper = styled.div<{ $width?: string }>`
   width: ${({ $width }) => $width ?? "unset"};
 `
 
+export const FieldWrapper = styled.div<{ $grid?: number }>`
+  padding-top: 16px;
+  grid-column: span ${({ $grid }) => $grid ?? 1};
+`
+
 export const Input = styled.input`
   border: none;
   outline: none;
@@ -84,7 +89,7 @@ export const FormBlock = styled.div`
 export const FBLines = styled.div`
   display: flex;
   flex-direction: column;
-  /* gap: 16px; */
+  gap: 16px;
   padding: 24px;
 `
 

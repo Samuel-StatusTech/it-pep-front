@@ -84,7 +84,7 @@ export const FormBlock = styled.div`
 export const FBLines = styled.div`
   display: flex;
   flex-direction: column;
-  /* gap: 16px; */
+  gap: 16px;
   padding: 24px;
 `
 

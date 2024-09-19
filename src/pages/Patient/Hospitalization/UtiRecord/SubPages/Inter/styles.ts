@@ -4,9 +4,10 @@ export const Subpage = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: ${({ theme }) => theme.colors.neutral.white};
   border-radius: 8px;
-  padding: 24px 0;
+  padding: 64px 0;
   gap: 16px;
 `
 
